@@ -11,12 +11,8 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      #Simple devshell to test our lolcat
-      devShells.${system}.default = pkgs.mkShell {
-        buildInputs = [ pkgs.lolcat ];
-      };
 
       #We import the actual derivation made in ./hello/default.nix
-      libhello = import ./hello { pkgs = pkgs; };
+      package.${system}.libhello = import ./hello { pkgs = pkgs; };
     };
 }
