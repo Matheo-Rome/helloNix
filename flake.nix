@@ -13,6 +13,6 @@
     {
 
       #We import the actual derivation made in ./hello/default.nix
-      package.${system}.libhello = import ./hello { pkgs = pkgs; };
+      packages.${system}.libhello = import ./hello { pkgs = pkgs; };
     };
 }
