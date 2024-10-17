@@ -11,6 +11,7 @@ pkgs.stdenv.mkDerivation {
     ''; # Build the libhello.a 
     installPhase = ''
         mkdir -p $out/lib
+        mkdir -p $out/include
         make install PREFIX=$out
     ''; # Install the library
 }
